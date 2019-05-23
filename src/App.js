@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import CardList from './CardListComponent/CardList';
-import { robots } from './resources/robots';
 import SearchBox from './SearchBoxComponent/SearchBox';
 import './App.css';
 
@@ -8,7 +7,7 @@ class App extends Component {
     constructor(){
         super();
         this.state={
-            robots: robots,
+            robots: [],
             searchField: ""
         }
     }
@@ -37,6 +36,14 @@ class App extends Component {
         // console.log('Original robots', robots);
     }
 
+    componentDidMount = () =>{
+        fetch("https://jsonplaceholder.typicode.com/users").then(response => {
+            return response.json();
+        }).then(users =>{
+            this.setState({ robots: users });
+        });
+    }
+
     //Use shouldComponentUpdate function to optimize re-rendering process of the component
     shouldComponentUpdate = (props) => {
         if(this.state.searchField !== props.searchField){
@@ -46,7 +53,8 @@ class App extends Component {
     }
 
     render(){
-        const filteredRobots = robots.filter(
+        console.log(this.state.robots);
+        const filteredRobots = this.state.robots.filter(
             (robot) => {
                 return robot.name.toLowerCase().includes(this.state.searchField.toLowerCase());
             }

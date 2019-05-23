@@ -8,9 +8,9 @@
 }
 
 .sbox:focus{
-    border-color: deepskyblue;
-    border-width: 5px;
+    border-color: white;
+    border-width: 2px;
     box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.8);
-    transition: all 0.5s;
+    transition: all 0.1s;
     transform: scale(1.1);
 }

@@ -1,9 +1,14 @@
 import React from 'react';
 import './SearchBox.css';
 
-const SearchBox = () => {
+const SearchBox = ({filterFunction}) => {
     return (
-        <input class="sbox" type="search" placeholder="Search Robots"/>
+        <input 
+        className="sbox" 
+        type="search" 
+        placeholder="Search Robots"
+        onChange={filterFunction}
+        />
     );
 }
 

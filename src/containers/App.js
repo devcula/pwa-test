@@ -60,18 +60,25 @@ class App extends Component {
                 return robot.name.toLowerCase().includes(this.state.searchField.toLowerCase());
             }
         )
-        return(
-            <div className="tc">
-                <h1>My Robo Friends</h1>
-                <SearchBox filterFunction={this.onSearchChange}/>
-                {/* <CardList robots={ this.state.robots }/> */}
-                <Scroll>
-                    <ErrorBoundary>
-                        <CardList robots={ filteredRobots }/>
-                    </ErrorBoundary>
-                </Scroll>
-            </div>
-        );
+        if(this.state.robots.length===0){
+            return (
+                <h1 className="tc">LOADING...</h1>
+            )
+        }
+        else{
+            return(
+                <div className="tc">
+                    <h1>My Robo Friends</h1>
+                    <SearchBox filterFunction={this.onSearchChange}/>
+                    {/* <CardList robots={ this.state.robots }/> */}
+                    <Scroll>
+                        <ErrorBoundary>
+                            <CardList robots={ filteredRobots }/>
+                        </ErrorBoundary>
+                    </Scroll>
+                </div>
+            )
+        }
     }
 }
 

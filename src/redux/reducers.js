@@ -6,7 +6,6 @@ const initialState = {
 }
 
 export const appReducer = (state = initialState, action = {}) => {
-    console.log("Inside Reducer", action.type, action.payload);
     switch(action.type){
         case CHANGE_SEARCH_FIELD :
             return Object.assign({}, state, {searchField: action.payload});

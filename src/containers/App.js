@@ -45,7 +45,7 @@ class App extends Component {
         else{
             return(
                 <div className="tc">
-                    <h1>My Robo Friends</h1>
+                    <h1>BOT MATES</h1>
                     <SearchBox filterFunction={this.props.onSearchChange}/>
                     <Scroll>
                         <ErrorBoundary>

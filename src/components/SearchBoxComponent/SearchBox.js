@@ -6,7 +6,7 @@ const SearchBox = ({filterFunction}) => {
         <input 
         className="sbox" 
         type="search" 
-        placeholder="Search Robots"
+        placeholder="Search Bots"
         onChange={filterFunction} 
         />
     );

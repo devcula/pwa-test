@@ -12,14 +12,14 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state) => {
     return {
-        searchField: state.searchField,
-        robots: state.robots
+        searchField: state.searchFieldReducer.searchField,
+        robots: state.updateRobotsReducer.robots
     }
 }
 
 class App extends Component {
     render(){
-        return <MainPage props={this.props}/>
+        return <MainPage {...this.props}/>
     }
 }
 

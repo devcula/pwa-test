@@ -9,7 +9,7 @@ const initialRobotsState = {
     robots: []
 }
 
-export const searchFieldReducer = (state = initialSearchFieldState, action = {}) => {
+const searchFieldReducer = (state = initialSearchFieldState, action = {}) => {
     switch(action.type){
         case CHANGE_SEARCH_FIELD :
             return Object.assign({}, state, {searchField: action.payload});
@@ -18,7 +18,7 @@ export const searchFieldReducer = (state = initialSearchFieldState, action = {})
     }
 }
 
-export const updateRobotsReducer = (state = initialRobotsState, action = {}) => {
+const updateRobotsReducer = (state = initialRobotsState, action = {}) => {
     switch(action.type){
         case UPDATE_ROBOTS:
             return Object.assign({}, state, {robots: action.payload});
@@ -27,4 +27,4 @@ export const updateRobotsReducer = (state = initialRobotsState, action = {}) => 
     }
 }
 
-export const appReducer = combineReducers([searchFieldReducer, updateRobotsReducer]);
+export const appReducer = combineReducers({searchFieldReducer, updateRobotsReducer});

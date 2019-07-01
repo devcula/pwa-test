@@ -7,12 +7,7 @@ import ErrorBoundary from '../ErrorBoundaryComponent/ErrorBoundary';
 
 
 class MainPage extends Component {
-
-    componentWillMount = () => {
-        const robots = [];
-        this.props.updateRobots(robots);
-    }
-
+    
     componentDidMount = () =>{
         fetch("https://jsonplaceholder.typicode.com/users").then(response => {
             return response.json();

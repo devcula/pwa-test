@@ -2,7 +2,7 @@
   "name": "robofriends",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://devcula.github.io/corona-monitor",
+  "homepage": "https://devcula.github.io/pwa-test",
   "dependencies": {
     "gh-pages": "^2.0.1",
     "halogen": "^0.2.0",

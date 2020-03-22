@@ -13,6 +13,7 @@ const logger = createLogger();
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
+// const store = createStore(appReducer);
 // const store = createStore( appReducer, applyMiddleware(logger) );
 //Below method is used instead of the first one only to see redux changes in chrome developer tools.
 const store = createStore( appReducer, composeEnhancers(applyMiddleware(logger)));
